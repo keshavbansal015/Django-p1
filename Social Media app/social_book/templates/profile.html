@@ -35,9 +35,9 @@
 					{% if user_post_length == 0 %}
 					<span style="color: white; font-size: 27px;"><b>No Post</b></span>
 					{% elif user_post_length == 1 %}
-					<span style="color: white; font-size: 27px;"><b>{{user_post_length}} Post</b></span>
+					<span style="color: white; font-size: 27px;"><b>{{user_posts_len}} Post</b></span>
 					{% else %}
-					<span style="color: white; font-size: 27px;"><b>{{user_post_length}} Posts</b></span>
+					<span style="color: white; font-size: 27px;"><b>{{user_posts_len}} Posts</b></span>
 					{% endif %}
 
 					{% if user_followers == 0 or user_followers == 1 %}
