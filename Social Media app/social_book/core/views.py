@@ -86,7 +86,7 @@ def settings(request):
             user_profile.bio = bio
             user_profile.location = location
             user_profile.save()
-        return redirect(request,'settings')
+        return redirect('settings')
     return render(request, 'setting.html', {'user_profile':user_profile})
 
 
