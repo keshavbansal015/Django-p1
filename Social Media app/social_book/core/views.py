@@ -142,13 +142,17 @@ def profile(request,pk):
         button_text = 'Unfollow'
     else:
         button_text = 'Follow'
+    user_followers = len(FollowersCount.objects.filter(user=pk))
+    user_following = len(FollowersCount.objects.filter(follower=pk))
 
     context = {
         'user_object':user_object,
         'user_profile':user_profile,
         'user_posts':user_posts,
         'user_posts_len':user_posts_len,
-        'button_text':button_text
+        'button_text':button_text,
+        'user_followers':user_followers,
+        'user_following':user_following
     }
 
 
