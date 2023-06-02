@@ -134,12 +134,25 @@ def profile(request,pk):
     user_profile = Profile.objects.get(user=user_object)
     user_posts = Post.objects.filter(user=pk)
     user_posts_len = len(user_posts)
+
+    follower = request.user.username
+    user = pk
+
+    if FollowersCount.objects.filter(follower=follower, user=user).first():
+        button_text = 'Unfollow'
+    else:
+        button_text = 'Follow'
+
     context = {
         'user_object':user_object,
         'user_profile':user_profile,
         'user_posts':user_posts,
-        'user_posts_len':user_posts_len
+        'user_posts_len':user_posts_len,
+        'button_text':button_text
     }
+
+
+
     return render(request, 'profile.html',context)
 
 @login_required(login_url='signin')
