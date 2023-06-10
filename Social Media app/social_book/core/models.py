@@ -14,7 +14,7 @@ class Profile(models.Model):
     location    = models.CharField(max_length=100, blank=True)
 
     def __str__(self):
-        return self.user.usernames
+        return self.user.username
 
 class Post(models.Model):
     id          = models.UUIDField(primary_key=True, default=uuid.uuid4)
